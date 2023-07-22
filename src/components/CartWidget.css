@@ -1,0 +1,12 @@
+.cart-container{
+    position: relative;
+
+}
+
+.cart-value {
+    position: absolute;
+    color: green;
+    left:6px;
+    bottom: -20px;
+    font-size: 20px;
+}
