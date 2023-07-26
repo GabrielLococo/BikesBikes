@@ -19,11 +19,11 @@ export const NavBar = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto justify-content-around flex-grow-1">
-                                <Nav.Link href="#home">Camisas</Nav.Link>
-                                <Nav.Link href="#link">Poleras</Nav.Link>
-                                <Nav.Link href="#link2">Bluzas</Nav.Link>
-                                <Nav.Link href="#link3">Carteras</Nav.Link>
-                                <Nav.Link href="#link4">Zapatos</Nav.Link>
+                                <Nav.Link href="#home">Bicicletas</Nav.Link>
+                                <Nav.Link href="#link">Repuestos</Nav.Link>
+                                <Nav.Link href="#link2">Accesorios</Nav.Link>
+                                <Nav.Link href="#link3">Indumentaria</Nav.Link>
+                                <Nav.Link href="#link4">Outlet</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Col>

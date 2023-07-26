@@ -5,7 +5,7 @@
 
 .cart-value {
     position: absolute;
-    color: green;
+    color: rgb(25, 123, 161);
     left:6px;
     bottom: -20px;
     font-size: 20px;
