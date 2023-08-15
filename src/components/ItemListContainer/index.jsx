@@ -1,8 +1,8 @@
 import { Profiler, useEffect, useState } from 'react';
-import { SkeletonItem } from './SkeletonItem';
-import { ItemList } from './ItemList';
-import { getData } from '../Data.js';
-
+import { SkeletonItem } from '../SkeletonItem';
+import './ItemListContainer.css'
+import { ItemList } from '../ItemList';
+import { getData } from '../../data';
 
 export const ItemListContainer = ({ category = '' }) => {
     const [products, setProducts] = useState([])
@@ -26,9 +26,9 @@ export const ItemListContainer = ({ category = '' }) => {
     }, [category])
     return (
         <main className='main'>
-            <h1 className='title' style={{ display: 'inline-block' }}>Productos</h1><span>{category}</span>
+            <h1 className='title' style={{ display: 'inline-block' }}>BIKES BIKES</h1><span style={{fontSize:'50px',color:'black'}}>{category}</span>
             {loading
-                ? <SkeletonItem cards={40} />
+                ? <SkeletonItem cards={10} />
                 : <ItemList products={products} />}
 
         </main>

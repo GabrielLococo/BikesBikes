@@ -1,5 +1,6 @@
-// import './ItemList.css'
-import { Item } from './Item';
+import './ItemList.css'
+import { Item } from '../Item';
+
 import Row from 'react-bootstrap/Row'
 
 export const ItemList = ({ products }) => {

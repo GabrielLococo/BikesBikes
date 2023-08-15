@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import { ItemListContainer } from './components/ItemListContainer'
 import { NavBar } from './components/NavBar'
+import { ItemListContainer } from './components/ItemListContainer'
 
-
-function App() {
-  const [cartValue, setCartValue] = useState(0)
+function App() { 
   return (
     <>
-    <NavBar/>
-    <ItemListContainer greetings = {'Bienvenidos!'}/>
+      <NavBar />
+      <ItemListContainer />
     </>
   )
 }

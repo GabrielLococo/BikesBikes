@@ -1,0 +1,8 @@
+.main {
+    min-height: calc(100vh - 66px);
+    width: 90%;
+    margin: 0 auto;
+}
+.title {
+    margin: 100px 45%;
+}

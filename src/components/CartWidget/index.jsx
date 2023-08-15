@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MdPedalBike } from "react-icons/md";
-import '../stylesheets/CartWidget.css'
+import './CartWidget.css'
 
 
 export const CartWidget = () => {
@@ -13,3 +13,5 @@ export const CartWidget = () => {
     )
 }
 
+
+//LISTO JSX Y CSS
