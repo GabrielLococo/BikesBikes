@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 export const NavBar = () => {
     const categories = ['Ruta', 'MTB', 'Repuestos', 'Accesorios']
     return (
-        <Navbar sticky="top" expand="sm" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
+        <Navbar sticky="top" expand="sm" bg="dark" data-bs-theme="dark" className="bg-body-tertiary fs-5">
             <Container>
-                <Link to="/"><img src={Logo} height={40} /></Link>
+                <Link to="/"><img src={Logo} height={60} /></Link>
                 <Row>
                     <Col>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />

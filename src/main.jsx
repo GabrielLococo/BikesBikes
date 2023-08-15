@@ -11,7 +11,7 @@ import { ItemDetailContainer } from './pages/ItemDetailContainer/index.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <SkeletonTheme baseColor="#bbbbbb" highlightColor="#999">
+    <SkeletonTheme baseColor="grey" highlightColor="white">
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<App />} />
