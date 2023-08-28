@@ -60,7 +60,7 @@ export const ItemDetailContainer = () => {
                                     "https://actitudsports.com.ar/wp-content/uploads/2022/01/shift1.jpg")
                             )
                             } style={{ height: 310, objectFit: 'cover' }} />
-                            <Card.Title>${shopData.price}</Card.Title>
+                            <Card.Title className='cardTitle'>${shopData.price}</Card.Title>
                             <Card.Text>
                                 {shopData.description}
                             </Card.Text>
