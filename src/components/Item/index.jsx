@@ -3,12 +3,12 @@ import Col from 'react-bootstrap/Col'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
-
-
-
+import { CartContext } from '../../context/cartContext'  // warning
+import { useContext } from 'react'
 
 
 export const Item = ({ id, description, price, name}) => {
+  const increaseCart = useContext(CartContext)
   return (
     <Col>
       <Card style={{ minHeight: '100%' }}>
@@ -28,7 +28,7 @@ export const Item = ({ id, description, price, name}) => {
           <ListGroup.Item><Link style={{color: 'black'}} to={`/Item/${id}`}>INFO</Link></ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Button variant="secondary">Agregar al carrito</Button>
+          <Button variant="secondary" onClick={()=>{increaseCart.addCartValue([{id, price, name}])}}>Agregar al carrito</Button>
         </Card.Body>
       </Card>
     </Col>

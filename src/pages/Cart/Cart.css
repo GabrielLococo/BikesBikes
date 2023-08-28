@@ -1,0 +1,52 @@
+.bodyCard {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(176, 176, 176);
+}
+.nameCart {
+    font-weight: bold;
+    font-size: 1.3rem;
+    
+}
+
+.cardText {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.headerCard {
+    font-size: 3rem;
+    font-weight: bold;
+    background-color:antiquewhite;
+    color: black;
+    padding: 50px;
+    letter-spacing: 10px;
+    font-family: 'Roboto';
+    
+}
+
+.unitsModifyButton {
+    cursor: pointer;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.bmore {
+    color: green;
+}
+
+.bless {
+    color: red;
+}
+@media only screen and (max-width: 639px) {
+    .bodyCard {
+      flex-direction: column;
+    }
+    .nameCart {
+        width: auto;
+    }
+  }

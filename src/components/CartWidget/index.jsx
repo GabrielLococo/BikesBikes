@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { MdPedalBike } from "react-icons/md";
-import './CartWidget.css'
+import './CartWidget.css';
+import { CartContext } from '../../context/cartContext';     //warning
+import { Link } from 'react-router-dom';
 
 
 export const CartWidget = () => {
-    const [cartCount, setCartcout] = useState(0)
+    const cartContext = useContext(CartContext)
     return (
         <div className='cart-container'>
-        <MdPedalBike color='white' size={25}/>
-        <span className='cart-value'>{cartCount}</span>
+        <Link to='/Cart'>
+                <MdPedalBike className='justify-content-end' /* ????? classname */  style={{ color: '#b93939' }} size={25} />
+                <span className='cart-value'>{cartContext.cartValue}</span>
+            </Link>
         </div>
     )
 }
-
-
-//LISTO JSX Y CSS

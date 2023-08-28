@@ -1,4 +1,4 @@
-import { Profiler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SkeletonItem } from '../SkeletonItem';
 import './ItemListContainer.css'
 import { ItemList } from '../ItemList';
@@ -26,9 +26,9 @@ export const ItemListContainer = ({ category = '' }) => {
     }, [category])
     return (
         <main className='main'>
-            <h1 className='title' style={{ display: 'inline-block' }}>BIKES BIKES</h1><span style={{fontSize:'50px',color:'black'}}>{category}</span>
+            <h1 className='title' style={{ display: 'inline-block' }}>BIKES BIKES</h1><span>{category}</span>
             {loading
-                ? <SkeletonItem cards={10} />
+                ? <SkeletonItem cards={30} />
                 : <ItemList products={products} />}
 
         </main>
