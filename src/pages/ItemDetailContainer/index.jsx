@@ -5,9 +5,13 @@ import './ItemDetailContainer.css'
 import { Card } from "react-bootstrap"
 import Button from 'react-bootstrap/Button'
 import { useContext, useEffect, useState } from "react"
-import { getData } from '../../data'
 import Skeleton from "react-loading-skeleton"
 import { CartContext } from "../../context/cartContext"
+import { collection, doc, getDoc } from "firebase/firestore"
+import { firestore } from "../../firebase/app"
+import { Link } from "react-router-dom"
+
+
 
 export const ItemDetailContainer = () => {
     const updateCart = useContext(CartContext)
@@ -32,19 +36,27 @@ export const ItemDetailContainer = () => {
             setProducts(subProds)
         }
     }
-    const pushToCart = () => {
-        console.log(updateCart.cartProducts)
-    }
+    
 
     useEffect(() => {
         setLoading(true)
-        getData()
-            .then(data => {
-                const findData = data.find(item => item.id === Number(params.id))
-                setShopData(findData)
-            })
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false))
+        const fetchData = async () => {
+            try {
+                const docRef = doc(firestore, "productos", params.id);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    setShopData(docSnap.data())
+                    setLoading(false)
+                } else {
+                    console.log("no se encontró tal documento");
+                }
+
+            } catch (error) {
+                console.error('fetching error', error);
+            }
+        }
+        fetchData()
     }, [])
     return (
         <>
@@ -53,7 +65,7 @@ export const ItemDetailContainer = () => {
                 ? <Skeleton cards={1} />
                 : <article>
                     <Card className="text-center" style={{ width: '42rem' }}>
-                        <Card.Header>{shopData.name}</Card.Header>
+                        <Card.Header style={{fontWeight:'600', fontSize:'30px', fontFamily:'Georgia'}} >{shopData.name}</Card.Header>
                         <Card.Body>
                             <Card.Img variant="top" src={''} onError={(e) => (
                                 (e.target.src =
@@ -64,7 +76,7 @@ export const ItemDetailContainer = () => {
                             <Card.Text>
                                 {shopData.description}
                             </Card.Text>
-                            <Button variant="success" onClick={() => { updateCart.addCartValue(products) }}>Agregar al carrito</Button>{' '}
+                            <Button variant="success" style={{color:'black'}} onClick={() => { updateCart.addCartValue(products) }}>Agregar al carrito😀</Button>{' '}
                             <Button variant="secondary" onClick={subCartHandler}>-</Button>{' '}
                             <div className='NumberFormContainer'>
                                 <Form.Label htmlFor="inputProducts">Cantidad</Form.Label>
@@ -74,7 +86,7 @@ export const ItemDetailContainer = () => {
                                 />
                             </div>{' '}
                             <Button variant="secondary" onClick={addingCartHandler}>+</Button>{' '}
-                            <Button variant="warning" onClick={pushToCart}>Ir al carrito</Button>
+                            <Link to={'/Cart'}><Button variant="success" style={{color:'black'}}>Ir al carrito🚲</Button></Link>
                         </Card.Body>
                         <Card.Footer className="text-muted">10 Stock</Card.Footer>
                     </Card>

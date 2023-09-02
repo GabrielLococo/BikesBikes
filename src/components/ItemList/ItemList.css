@@ -3,3 +3,18 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 10px;
 }
+
+.cards {
+    background-color: grey;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.card-body {
+    background-color: rgb(216, 216, 216);
+}
+
+.list-group-item {
+    font-weight: 600;
+}
+

@@ -6,32 +6,16 @@ import './Cart.css'
 import { Alert } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import {  CgMathPlus, CgMathMinus } from "react-icons/cg"
+import { useUniqueObjectsWithQuantity } from '../../hooks/useUniqueObjectsWithQuantity'
+import { Layout } from '../../components/Layout'
 
 
 export const Cart = () => {
     const cartInfo = useContext(CartContext)
-    function removeDuplicatesAndCount(inputArray) {
-        const countMap = {};
 
-        inputArray.forEach(obj => {
-            const key = JSON.stringify(obj);
-            countMap[key] = (countMap[key] || 0) + 1;
-        });
-
-        const resultArray = [];
-        for (const key in countMap) {
-            if (countMap.hasOwnProperty(key)) {
-                const obj = JSON.parse(key);
-                obj.units = countMap[key];
-                resultArray.push(obj);
-            }
-        }
-        return resultArray;
-    }
-
-    const cartProducts = removeDuplicatesAndCount(cartInfo.cartProducts)
-    const totalPrice = cartProducts.map(prod => prod.price * prod.units).reduce((a, b) => a + b, 0)
+    const [cartProducts, totalPrice] = useUniqueObjectsWithQuantity(cartInfo.cartProducts)
     return (
+        <Layout>
         <Card className="text-center">
             <Card.Header className='headerCard' >Carrito</Card.Header>
             {cartProducts.length ? cartProducts.map(prod => (
@@ -54,11 +38,12 @@ export const Cart = () => {
                 </Alert>}
             <Card.Footer className='text-muted cardText' >TOTAL <br></br>${totalPrice}
             </Card.Footer>
-            {cartProducts.length ? <Card.Footer className="text-muted"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}><Button variant="info">Seguir comprando</Button>{' '}<Button variant="warning">Salir</Button></Link>
+            {cartProducts.length ? <Card.Footer className="text-muted"><Button variant="success" onClick={cartInfo.clearCart}>Limpiar carrito</Button>{' '}<Link to='/Checkout'><Button style={{ width: '100%', marginTop: '20px' }} variant="dark">Finaliza tu compra!</Button></Link>
             </Card.Footer>
-                : <Card.Footer className="text-muted"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}><Button variant="primary">Ir a comprar</Button></Link>
+                : <Card.Footer className="text-muted"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}><Button variant="success">🤑COMPRAR🤑</Button></Link>
                 </Card.Footer>}
 
         </Card>
+        </Layout>
     );
 }

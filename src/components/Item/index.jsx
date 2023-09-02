@@ -25,10 +25,10 @@ export const Item = ({ id, description, price, name}) => {
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>${price}</ListGroup.Item>
-          <ListGroup.Item><Link style={{color: 'black'}} to={`/Item/${id}`}>INFO</Link></ListGroup.Item>
+          <ListGroup.Item><Link style={{color: 'purple'}} to={`/Item/${id}`}>Informacion del producto</Link></ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Button variant="secondary" onClick={()=>{increaseCart.addCartValue([{id, price, name}])}}>Agregar al carrito</Button>
+          <Button variant="success" onClick={()=>{increaseCart.addCartValue([{id, price, name}])}} style={{fontFamily:'Georgia', color:'black'}}>Agregar al carrito!😀</Button>
         </Card.Body>
       </Card>
     </Col>
