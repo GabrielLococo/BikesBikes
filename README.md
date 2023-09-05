@@ -1,8 +1,19 @@
-# React + Vite
+# React + Vite | Proyecto Final Curso de ReactJS CoderHouse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ecommerce
+Emulación de un Ecommerce sobre venta de bicicletas conectada a Firebase
 
-Currently, two official plugins are available:
+### Herramientas utilizadas
+- Vite 
+- SkeletonItem
+- React bootstrap
+- Firebase
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Comandos de inicio del proyecto
+- npm install
+- npm run dev 
+
+#### Imagenes ilustrativas del proyecto
+https://postimg.cc/gallery/Jy90zXx
+
+*Variables de entorno de Firebase reservadas por seguridad*
