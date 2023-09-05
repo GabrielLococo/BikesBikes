@@ -20,6 +20,6 @@ input::-webkit-inner-spin-button {
   margin: 25px 0 25px 0;
   background-color: grey;
   padding: 5px;
-  color: white;
+  color: black;
   letter-spacing: 2px;
 }

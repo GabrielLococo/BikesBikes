@@ -64,15 +64,15 @@ export const ItemDetailContainer = () => {
             {loading
                 ? <Skeleton cards={1} />
                 : <article>
-                    <Card className="text-center" style={{ width: '42rem' }}>
+                    <Card className="text-center" style={{ width: '42rem' , border:'2px solid black' }}>
                         <Card.Header style={{fontWeight:'600', fontSize:'30px', fontFamily:'Georgia'}} >{shopData.name}</Card.Header>
                         <Card.Body>
                             <Card.Img variant="top" src={''} onError={(e) => (
                                 (e.target.src =
                                     "https://actitudsports.com.ar/wp-content/uploads/2022/01/shift1.jpg")
                             )
-                            } style={{ height: 310, objectFit: 'cover' }} />
-                            <Card.Title className='cardTitle'>${shopData.price}</Card.Title>
+                            } style={{ height: 310, objectFit: 'fill' }} />
+                            <Card.Title className='cardTitle'>Precio: US$ {shopData.price}</Card.Title>
                             <Card.Text>
                                 {shopData.description}
                             </Card.Text>

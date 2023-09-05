@@ -26,19 +26,19 @@ export const Cart = () => {
                         <CgMathMinus className='unitsModifyButton bless' onClick={() => cartInfo.deleteCartValue(cartInfo.cartProducts, { id: prod.id, price: prod.price, name: prod.name })} />
                     </Card.Text>
                     <Card.Text className='cardText'>
-                        Precio: ${prod.price}
+                        Precio: US${prod.price}
                     </Card.Text>
                     <Card.Text className='cardText'>
-                        Total: ${prod.price * prod.units}
+                        Total: US${prod.price * prod.units}
                     </Card.Text>
                 </Card.Body>
             ))
                 : <Alert variant='danger'>
                     No hay productos en el carrito!
                 </Alert>}
-            <Card.Footer className='text-muted cardText' >TOTAL <br></br>${totalPrice}
+            <Card.Footer className='text-muted cardText' >TOTAL <br></br>US${totalPrice}
             </Card.Footer>
-            {cartProducts.length ? <Card.Footer className="text-muted"><Button variant="success" onClick={cartInfo.clearCart}>Limpiar carrito</Button>{' '}<Link to='/Checkout'><Button style={{ width: '100%', marginTop: '20px' }} variant="dark">Finaliza tu compra!</Button></Link>
+            {cartProducts.length ? <Card.Footer className="text-muted"><Button variant="warning" onClick={cartInfo.clearCart}>Limpiar carrito</Button>{' '}<Link to='/Checkout'><Button style={{ width: '100%', marginTop: '20px' }} variant="success">Continuar compra</Button></Link>
             </Card.Footer>
                 : <Card.Footer className="text-muted"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}><Button variant="success">🤑COMPRAR🤑</Button></Link>
                 </Card.Footer>}

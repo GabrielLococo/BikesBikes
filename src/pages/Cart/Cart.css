@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     background-color: rgb(176, 176, 176);
+    margin:1px;
 }
 .nameCart {
     font-weight: bold;
@@ -21,7 +22,7 @@
     color: black;
     padding: 50px;
     letter-spacing: 10px;
-    font-family: 'Roboto';
+    font-family: 'Georgia';
     
 }
 

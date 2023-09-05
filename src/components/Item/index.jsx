@@ -11,21 +11,21 @@ export const Item = ({ id, description, price, name}) => {
   const increaseCart = useContext(CartContext)
   return (
     <Col>
-      <Card style={{ minHeight: '100%' }}>
+      <Card style={{ minHeight: '100%', border:'2px solid black' }}>
       <Card.Img variant="top" src={''} onError={(e) => (
           (e.target.src =
             "https://actitudsports.com.ar/wp-content/uploads/2022/01/shift1.jpg")
         )
-        } style={{ height: 310, objectFit: 'cover' }} />
+        } style={{ height: 310, objectFit: 'fill',padding:'20px' }} />
         <Card.Body style={{ minHeight: '180px' }}>
           <Card.Title>{name}</Card.Title>
-          <Card.Text>
+          <Card.Text style={{textAlign:'center'}}>
             {description}
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroup.Item>${price}</ListGroup.Item>
-          <ListGroup.Item><Link style={{color: 'purple'}} to={`/Item/${id}`}>Informacion del producto</Link></ListGroup.Item>
+          <ListGroup.Item>Precio: US$ {price}</ListGroup.Item>
+          <ListGroup.Item><Link style={{color: 'green'}} to={`/Item/${id}`}>Informacion del producto</Link></ListGroup.Item>
         </ListGroup>
         <Card.Body>
           <Button variant="success" onClick={()=>{increaseCart.addCartValue([{id, price, name}])}} style={{fontFamily:'Georgia', color:'black'}}>Agregar al carrito!😀</Button>
